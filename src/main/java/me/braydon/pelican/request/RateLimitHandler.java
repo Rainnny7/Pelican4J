@@ -108,8 +108,8 @@ public final class RateLimitHandler {
      * @param callback the callback to invoke
      * @param throwRateLimitErrors whether rate limit errors should be thrown
      * @param retry should the action be retried if a rate limit is hit (and being thrown)?
-     * @return whether the request was successful
      * @param <T> the action response type
+     * @return whether the request was successful
      */
     @SuppressWarnings("unchecked")
     public <T extends PanelModel<T>> boolean tryRequest(@NonNull PanelAction<?> action, BiConsumer<T, Exception> callback, boolean throwRateLimitErrors, boolean retry) {

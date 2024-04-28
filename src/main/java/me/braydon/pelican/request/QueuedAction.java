@@ -36,6 +36,7 @@ import java.util.function.BiConsumer;
  * Represents a queued action.
  *
  * @author Braydon
+ * @param <T> the action response type
  */
 @AllArgsConstructor(access = AccessLevel.PROTECTED) @Getter
 public class QueuedAction<T extends PanelModel<T>> {

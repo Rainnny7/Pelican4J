@@ -39,8 +39,8 @@ import java.util.function.Consumer;
 /**
  * An action that can be executed on a panel.
  *
- * @param <T> the type of response expected when this action is executed
  * @author Braydon
+ * @param <T> the type of response expected when this action is executed
  */
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class PanelAction<T extends PanelModel<T>> {
@@ -104,11 +104,11 @@ public class PanelAction<T extends PanelModel<T>> {
     /**
      * Create a new panel action.
      *
-     * @param clientConfig   the client config to use for executing actions
+     * @param clientConfig     the client config to use for executing actions
      * @param rateLimitHandler the rate limit handler to use for querying actions
-     * @param webRequest     the web request to send for this action
-     * @param responseType   the expected response type, null if none
-     * @param <T>            the response type
+     * @param webRequest       the web request to send for this action
+     * @param responseType     the expected response type, null if none
+     * @param <T>              the response type
      * @return the panel action
      */
     @NonNull

@@ -70,8 +70,8 @@ public class JsonWebRequest {
      *
      * @param clientConfig the client config to use
      * @param responseType the expected response type, null for none
-     * @return the response, null if none
      * @param <T> the response type
+     * @return the response, null if none
      */
     @SneakyThrows
     public <T extends PanelModel<T>> T execute(@NonNull ClientConfig clientConfig, Class<T> responseType) {

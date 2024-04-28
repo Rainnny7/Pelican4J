@@ -38,8 +38,8 @@ import java.io.Closeable;
 /**
  * A client for the API.
  *
- * @param <A> the actions for this client
  * @author Braydon
+ * @param <A> the actions for this client
  */
 @Getter @Accessors(fluent = true)
 @Slf4j(topic = "Pelican4J Client")

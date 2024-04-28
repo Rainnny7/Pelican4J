@@ -30,6 +30,7 @@ import lombok.*;
  * A model for the panel.
  *
  * @author Braydon
+ * @param <T> The type of the value of this model
  */
 @NoArgsConstructor @Setter @Getter @ToString
 public class PanelModel<T> {

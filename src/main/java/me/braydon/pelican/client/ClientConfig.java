@@ -51,6 +51,9 @@ public final class ClientConfig {
      */
     private final boolean debugging;
 
+    /**
+     * The config builder.
+     */
     public static class ClientConfigBuilder {
         @NonNull
         public ClientConfigBuilder debugging(boolean state) {
