@@ -1,0 +1,247 @@
+<!-- Docs: https://checkstyle.org -->
+<!DOCTYPE module PUBLIC
+        "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
+        "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
+<module name="Checker">
+    <!-- See: https://checkstyle.org/checks/sizes/filelength.html#FileLength -->
+    <module name="FileLength" />
+
+    <!-- See: https://checkstyle.org/checks/whitespace/filetabcharacter.html#FileTabCharacter-->
+    <module name="FileTabCharacter" />
+
+    <module name="TreeWalker">
+        <!-- See: https://checkstyle.org/checks/sizes/anoninnerlength.html#AnonInnerLength -->
+        <module name="AnonInnerLength">
+            <property name="max" value="80" />
+        </module>
+
+        <!-- See: https://checkstyle.org/checks/coding/arraytrailingcomma.html#ArrayTrailingComma -->
+        <module name="ArrayTrailingComma" />
+
+        <!-- See: https://checkstyle.org/checks/misc/arraytypestyle.html#ArrayTypeStyle -->
+        <module name="ArrayTypeStyle" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/atclauseorder.html#AtclauseOrder -->
+        <module name="AtclauseOrder" />
+
+        <!-- See: https://checkstyle.org/checks/misc/avoidescapedunicodecharacters.html#AvoidEscapedUnicodeCharacters -->
+        <module name="AvoidEscapedUnicodeCharacters" />
+
+        <!-- See: https://checkstyle.org/checks/blocks/avoidnestedblocks.html#AvoidNestedBlocks -->
+        <module name="AvoidNestedBlocks">
+            <property name="allowInSwitchCase" value="true"/>
+        </module>
+
+        <!-- See: https://checkstyle.org/checks/coding/avoidnoargumentsuperconstructorcall.html#AvoidNoArgumentSuperConstructorCall -->
+        <module name="AvoidNoArgumentSuperConstructorCall" />
+
+        <!-- See: https://checkstyle.org/checks/imports/avoidstaticimport.html#AvoidStaticImport -->
+        <module name="AvoidStaticImport" />
+
+        <!-- See: https://checkstyle.org/checks/coding/defaultcomeslast.html#DefaultComesLast -->
+        <module name="DefaultComesLast" />
+
+        <!-- See: https://checkstyle.org/checks/blocks/emptyblock.html#EmptyBlock -->
+        <module name="EmptyBlock" />
+
+        <!-- See: https://checkstyle.org/checks/blocks/emptycatchblock.html#EmptyCatchBlock-->
+        <module name="EmptyCatchBlock">
+            <property name="exceptionVariableName" value="ignored" />
+        </module>
+
+        <!-- See: https://checkstyle.org/checks/whitespace/emptyforinitializerpad.html#EmptyForInitializerPad -->
+        <module name="EmptyForInitializerPad" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/emptyforiteratorpad.html#EmptyForIteratorPad -->
+        <module name="EmptyForIteratorPad" />
+
+        <!-- See: https://checkstyle.org/checks/coding/emptystatement.html#EmptyStatement -->
+        <module name="EmptyStatement" />
+
+        <!-- See: https://checkstyle.org/checks/coding/fallthrough.html#FallThrough -->
+        <module name="FallThrough" />
+
+        <!-- See: https://checkstyle.org/checks/design/finalclass.html#FinalClass -->
+        <module name="FinalClass" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/genericwhitespace.html#GenericWhitespace -->
+        <module name="GenericWhitespace" />
+
+        <!-- See: https://checkstyle.org/checks/coding/illegalthrows.html#IllegalThrows -->
+        <module name="IllegalThrows" />
+
+        <!-- See: https://checkstyle.org/checks/misc/indentation.html#Indentation -->
+        <module name="Indentation" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/invalidjavadocposition.html#InvalidJavadocPosition -->
+        <module name="InvalidJavadocPosition" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/javadocblocktaglocation.html#JavadocBlockTagLocation -->
+        <module name="JavadocBlockTagLocation" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/javadoccontentlocation.html#JavadocContentLocation -->
+        <module name="JavadocContentLocation" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/javadocmethod.html#JavadocMethod -->
+        <module name="JavadocMethod" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/javadocmissingleadingasterisk.html#JavadocMissingLeadingAsterisk -->
+        <module name="JavadocMissingLeadingAsterisk" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/javadocmissingwhitespaceafterasterisk.html#JavadocMissingWhitespaceAfterAsterisk -->
+        <module name="JavadocMissingWhitespaceAfterAsterisk" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/javadocstyle.html#JavadocStyle -->
+        <module name="JavadocStyle" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/javadoctagcontinuationindentation.html#JavadocTagContinuationIndentation -->
+        <module name="JavadocTagContinuationIndentation" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/javadoctype.html#JavadocType -->
+        <module name="JavadocType" />
+
+        <!-- See: https://checkstyle.org/checks/naming/lambdaparametername.html#LambdaParameterName -->
+        <module name="LambdaParameterName">
+            <property name="format" value="^[a-z$][a-zA-Z0-9$]*$" />
+        </module>
+
+        <!-- See: https://checkstyle.org/checks/blocks/leftcurly.html#LeftCurly -->
+        <module name="LeftCurly" />
+
+        <!-- See: https://checkstyle.org/checks/blocks/rightcurly.html#RightCurly -->
+        <module name="RightCurly" />
+
+        <!-- See: https://checkstyle.org/checks/naming/membername.html#MemberName -->
+        <module name="MemberName" />
+
+        <!-- See: https://checkstyle.org/checks/naming/methodname.html#MethodName -->
+        <module name="MethodName" />
+
+        <!-- See: https://checkstyle.org/checks/sizes/methodcount.html#MethodCount -->
+        <module name="MethodCount" />
+
+        <!-- See: https://checkstyle.org/checks/sizes/methodlength.html#MethodLength -->
+        <module name="MethodLength" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/methodparampad.html#MethodParamPad -->
+        <module name="MethodParamPad" />
+
+        <!-- See: https://checkstyle.org/checks/annotation/missingoverride.html#MissingOverride -->
+        <module name="MissingOverride" />
+
+        <!-- See: https://checkstyle.org/checks/coding/missingswitchdefault.html#MissingSwitchDefault -->
+        <module name="MissingSwitchDefault" />
+
+        <!-- See: https://checkstyle.org/checks/coding/modifiedcontrolvariable.html#ModifiedControlVariable -->
+        <module name="ModifiedControlVariable">
+            <property name="skipEnhancedForLoopVariable" value="true" />
+        </module>
+
+        <!-- See: https://checkstyle.org/checks/blocks/needbraces.html#NeedBraces -->
+        <module name="NeedBraces" />
+
+        <!-- See: https://checkstyle.org/checks/design/mutableexception.html#MutableException -->
+        <module name="MutableException" />
+
+        <!-- See: https://checkstyle.org/checks/coding/nestedfordepth.html#NestedForDepth -->
+        <module name="NestedForDepth">
+            <property name="max" value="3" />
+        </module>
+
+        <!-- https://checkstyle.org/checks/coding/nestedifdepth.html#NestedIfDepth -->
+        <module name="NestedIfDepth">
+            <property name="max" value="3" />
+        </module>
+
+        <!-- See: https://checkstyle.org/checks/coding/nestedtrydepth.html#NestedTryDepth -->
+        <module name="NestedTryDepth">
+            <property name="max" value="2" />
+        </module>
+
+        <!-- See: https://checkstyle.org/checks/coding/nofinalizer.html#NoFinalizer -->
+        <module name="NoFinalizer" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/nolinewrap.html#NoLineWrap -->
+        <module name="NoLineWrap" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/nonemptyatclausedescription.html#NonEmptyAtclauseDescription -->
+        <module name="NonEmptyAtclauseDescription" />
+
+        <!-- See: https://checkstyle.org/checks/coding/noenumtrailingcomma.html#NoEnumTrailingComma -->
+        <module name="NoEnumTrailingComma" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/nowhitespacebefore.html#NoWhitespaceBefore -->
+        <module name="NoWhitespaceBefore" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/nowhitespacebeforecasedefaultcolon.html#NoWhitespaceBeforeCaseDefaultColon -->
+        <module name="NoWhitespaceBeforeCaseDefaultColon" />
+
+        <!-- See: https://checkstyle.org/checks/coding/onestatementperline.html#OneStatementPerLine -->
+        <module name="OneStatementPerLine" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/operatorwrap.html#OperatorWrap -->
+        <module name="OperatorWrap" />
+
+        <!-- See: https://checkstyle.org/checks/coding/packagedeclaration.html#PackageDeclaration -->
+        <module name="PackageDeclaration" />
+
+        <!-- See: https://checkstyle.org/checks/naming/packagename.html#PackageName -->
+        <module name="PackageName" />
+
+        <!-- See: https://checkstyle.org/checks/naming/parametername.html#ParameterName -->
+        <module name="ParameterName" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/parenpad.html#ParenPad -->
+        <module name="ParenPad" />
+
+        <!-- See: https://checkstyle.org/checks/naming/patternvariablename.html#PatternVariableName -->
+        <module name="PatternVariableName" />
+
+        <!-- See: https://checkstyle.org/checks/imports/redundantimport.html#RedundantImport -->
+        <module name="RedundantImport" />
+
+        <!-- See: https://checkstyle.org/checks/modifier/redundantmodifier.html#RedundantModifier -->
+        <module name="RedundantModifier" />
+
+        <!-- See: https://checkstyle.org/checks/coding/simplifybooleanexpression.html#SimplifyBooleanExpression -->
+        <module name="SimplifyBooleanExpression" />
+
+        <!-- See: https://checkstyle.org/checks/coding/simplifybooleanreturn.html#SimplifyBooleanReturn -->
+        <module name="SimplifyBooleanReturn" />
+
+        <!-- See: https://checkstyle.org/checks/javadoc/singlelinejavadoc.html#SingleLineJavadoc -->
+        <module name="SingleLineJavadoc" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/singlespaceseparator.html#SingleSpaceSeparator -->
+        <module name="SingleSpaceSeparator" />
+
+        <!-- See: https://checkstyle.org/checks/coding/stringliteralequality.html#StringLiteralEquality -->
+        <module name="StringLiteralEquality" />
+
+        <!-- See: https://checkstyle.org/checks/coding/unnecessarysemicoloninenumeration.html#UnnecessarySemicolonInEnumeration -->
+        <module name="UnnecessarySemicolonInEnumeration" />
+
+        <!-- See: https://checkstyle.org/checks/coding/unnecessarysemicolonintrywithresources.html#UnnecessarySemicolonInTryWithResources -->
+        <module name="UnnecessarySemicolonInTryWithResources" />
+
+        <!-- See: https://checkstyle.org/checks/coding/unnecessarysemicolonafteroutertypedeclaration.html#UnnecessarySemicolonAfterOuterTypeDeclaration -->
+        <module name="UnnecessarySemicolonAfterOuterTypeDeclaration" />
+
+        <!-- See: https://checkstyle.org/checks/coding/unnecessarysemicolonaftertypememberdeclaration.html#UnnecessarySemicolonAfterTypeMemberDeclaration -->
+        <module name="UnnecessarySemicolonAfterTypeMemberDeclaration" />
+
+        <!-- See: https://checkstyle.org/checks/imports/unusedimports.html#UnusedImports -->
+        <module name="UnusedImports" />
+
+        <!-- See: https://checkstyle.org/checks/misc/upperell.html#UpperEll -->
+        <module name="UpperEll" />
+
+        <!-- See: https://checkstyle.org/checks/whitespace/whitespacearound.html#WhitespaceAround -->
+        <module name="WhitespaceAround">
+            <property name="tokens" value="ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, DO_WHILE, EQUAL, GE, GT, LAMBDA, LAND, LCURLY, LE, LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_RETURN, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS, MOD, NOT_EQUAL, PLUS, QUESTION, RCURLY, SL, SLIST, SR, STAR, LITERAL_ASSERT, TYPE_EXTENSION_AND" />
+        </module>
+
+        <!-- See: https://checkstyle.org/checks/javadoc/writetag.html#WriteTag -->
+        <module name="WriteTag" />
+    </module>
+</module>
