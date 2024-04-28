@@ -9,7 +9,7 @@ jobs:
   docker:
     strategy:
       matrix:
-        java-version: ["17"]
+        java-version: ["8"]
         maven-version: ["3.8.5"]
     runs-on: "ubuntu-latest"
 
