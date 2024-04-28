@@ -51,7 +51,6 @@ public final class PelicanActionTests {
         client = Pelican4J.forPelican(ClientConfig.builder()
                 .panelUrl(System.getenv("TEST_PANEL_URL"))
                 .apiKey(System.getenv("TEST_APPS_API_KEY"))
-                .debugging(true)
                 .build()); // Create a new Pelican client
     }
 
