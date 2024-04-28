@@ -42,7 +42,7 @@ jobs:
 
       # Run Maven tests
       - name: Maven Tests
-        run: mvn clean test -T6C
+        run: mvn test -B
 
       # Publish to Maven
       - name: Publish to Maven
