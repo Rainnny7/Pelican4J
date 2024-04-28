@@ -21,9 +21,35 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package me.braydon.pelican;
+package me.braydon.pelican.request;
+
+import lombok.AllArgsConstructor;
+import lombok.NonNull;
+import me.braydon.pelican.client.ClientConfig;
+import me.braydon.pelican.model.PanelModel;
 
 /**
+ * The handler for processing web requests.
+ *
  * @author Braydon
  */
-public final class Pelican4J { }
+@AllArgsConstructor
+public final class WebRequestHandler {
+    /**
+     * The client config used to make requests.
+     */
+    @NonNull private final ClientConfig clientConfig;
+
+    /**
+     * Handle the given web request.
+     *
+     * @param request the request to handle
+     * @param responseType the expected response type, null if none
+     * @return the response, null if none
+     * @param <T> the response type
+     */
+    public <T extends PanelModel<T>> T handle(@NonNull JsonWebRequest request, Class<T> responseType) {
+        // TODO: handle rate limit handling for async reqs
+        return request.execute(clientConfig, responseType);
+    }
+}

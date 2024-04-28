@@ -26,6 +26,8 @@ package me.braydon.pelican.test;
 import me.braydon.pelican.action.pelican.PelicanPanelActions;
 import me.braydon.pelican.client.ClientConfig;
 import me.braydon.pelican.client.Pelican4J;
+import me.braydon.pelican.exception.PanelAPIException;
+import me.braydon.pelican.model.Node;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -50,7 +52,8 @@ public final class PelicanActionTests {
         client = Pelican4J.forPelican(ClientConfig.builder()
                 .panelUrl(System.getenv("TEST_PANEL_URL"))
                 .apiKey(System.getenv("TEST_APPS_API_KEY"))
-                .build());
+                .debugging(true)
+                .build()); // Create a new Pelican client
     }
 
     /**
@@ -64,7 +67,8 @@ public final class PelicanActionTests {
          */
         @Test
         void testGetNodes() {
-            client.getActions().application().nodes();
+            Node node = client.actions().application().nodes().details(-1).execute();
+            System.out.println("node = " + node);
             // TODO: ...
         }
     }
