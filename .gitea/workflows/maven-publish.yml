@@ -40,10 +40,6 @@ jobs:
               }
             ]
 
-      # Run Maven tests
-      - name: Maven Tests
-        run: mvn clean package -q -T6C
-
       # Publish to Maven
       - name: Publish to Maven
-        run: mvn deploy -Pgen-javadocs -B -Dstyle.color=always --update-snapshots -q -T6C
+        run: mvn deploy -Pgen-javadocs -B -Dstyle.color=always --update-snapshots -T6C
