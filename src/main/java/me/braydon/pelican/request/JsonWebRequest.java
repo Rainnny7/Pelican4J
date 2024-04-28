@@ -99,8 +99,8 @@ public class JsonWebRequest {
                 log.debug("Receive response: {}", status);
             }
 
-            // If the status is not 200 (OK), handle the error
-            if (status != 200) {
+            // If the status is not OK, handle the error
+            if (status != HttpStatus.OK) {
                 JsonObject errorJsonObject = GSON.fromJson(json, JsonObject.class);
                 errorJsonObject = errorJsonObject.get("errors").getAsJsonArray().get(0).getAsJsonObject();
                 throw new PanelAPIException(status, errorJsonObject.get("code").getAsString(), errorJsonObject.get("detail").getAsString());

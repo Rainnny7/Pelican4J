@@ -21,38 +21,15 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package me.braydon.pelican.action.pterodactyl.application;
-
-import lombok.NonNull;
-import me.braydon.pelican.action.PanelAction;
-import me.braydon.pelican.action.PanelActions;
-import me.braydon.pelican.client.ClientConfig;
-import me.braydon.pelican.model.Node;
-import me.braydon.pelican.request.JsonWebRequest;
-import me.braydon.pelican.request.RateLimitHandler;
+package me.braydon.pelican.request;
 
 /**
- * Application node actions
- * for the Pterodactyl panel.
- *
  * @author Braydon
  */
-public final class ApplicationNodeActions extends PanelActions {
-    public ApplicationNodeActions(@NonNull ClientConfig clientConfig, @NonNull RateLimitHandler rateLimitHandler) {
-        super(clientConfig, rateLimitHandler);
-    }
+public final class HttpStatus {
+    // 2xx Successful
+    public static final int OK = 200;
 
-    /**
-     * Get the details of the
-     * node with the given id.
-     *
-     * @param id the node id
-     * @return the action
-     */
-    @NonNull
-    public PanelAction<Node> getDetails(int id) {
-        return PanelAction.create(clientConfig(), rateLimitHandler(), JsonWebRequest.builder()
-                .endpoint("/application/nodes/" + id)
-                .build(), Node.class);
-    }
+    // 4xx Client Errors
+    public static final int TOO_MANY_REQUESTS = 429;
 }

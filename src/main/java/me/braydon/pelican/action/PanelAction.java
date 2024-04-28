@@ -94,6 +94,11 @@ public class PanelAction<T extends PanelModel<T>> {
 
     /**
      * Execute this action instantly.
+     * <p>
+     * Doing this will execute the web
+     * request and return the response
+     * immediately, in a blocking manner.
+     * </p>
      *
      * @return the response, null if none
      */

@@ -103,6 +103,15 @@ public final class RateLimitHandler {
 
     /**
      * Try and execute the given action.
+     * <p>
+     * Doing this will try and execute the
+     * given action and immediately respond
+     * with the result. If the action fails
+     * to execute, and the error is due to
+     * a rate limit, the action will be queued
+     * to be re-tried later. All other errors
+     * will be passed to the given callback.
+     * </p>
      *
      * @param action the action to try
      * @param callback the callback to invoke
@@ -124,7 +133,7 @@ public final class RateLimitHandler {
             // the task to be re-tried later
             if (ex instanceof PanelAPIException) {
                 PanelAPIException apiException = (PanelAPIException) ex;
-                if (apiException.getCode() == 404 && !throwRateLimitErrors) {
+                if (apiException.getCode() == HttpStatus.TOO_MANY_REQUESTS && !throwRateLimitErrors) {
                     if (clientConfig.debugging()) {
                         log.debug("Panel API rate limit exceeded{}", retry ? ", queued action to be re-tried later..." : "");
                     }
