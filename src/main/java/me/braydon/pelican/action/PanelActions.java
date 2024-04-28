@@ -28,7 +28,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.experimental.Accessors;
-import me.braydon.pelican.request.WebRequestHandler;
+import me.braydon.pelican.client.ClientConfig;
+import me.braydon.pelican.request.RateLimitHandler;
 
 /**
  * A set of actions that can
@@ -39,7 +40,12 @@ import me.braydon.pelican.request.WebRequestHandler;
 @AllArgsConstructor @Getter(AccessLevel.PROTECTED) @Accessors(fluent = true)
 public abstract class PanelActions {
     /**
-     * The request handler to use for action execution.
+     * The client config to use for executing actions.
      */
-    @NonNull private final WebRequestHandler requestHandler;
+    @NonNull private final ClientConfig clientConfig;
+
+    /**
+     * The rate limit handler to use for querying actions.
+     */
+    @NonNull private final RateLimitHandler rateLimitHandler;
 }

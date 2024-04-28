@@ -28,7 +28,8 @@ import lombok.NonNull;
 import lombok.experimental.Accessors;
 import me.braydon.pelican.action.PanelActions;
 import me.braydon.pelican.action.pterodactyl.application.ApplicationNodeActions;
-import me.braydon.pelican.request.WebRequestHandler;
+import me.braydon.pelican.client.ClientConfig;
+import me.braydon.pelican.request.RateLimitHandler;
 
 /**
  * Implemented actions for the Pterodactyl panel.
@@ -43,8 +44,8 @@ public class PteroPanelActions extends PanelActions {
      */
     @NonNull private final Application application;
 
-    public PteroPanelActions(@NonNull WebRequestHandler requestHandler) {
-        super(requestHandler);
+    public PteroPanelActions(@NonNull ClientConfig clientConfig, @NonNull RateLimitHandler rateLimitHandler) {
+        super(clientConfig, rateLimitHandler);
         this.application = new Application();
     }
 
@@ -56,6 +57,6 @@ public class PteroPanelActions extends PanelActions {
         /**
          * Node actions for the application.
          */
-        @NonNull private final ApplicationNodeActions nodes = new ApplicationNodeActions(requestHandler());
+        @NonNull private final ApplicationNodeActions nodes = new ApplicationNodeActions(clientConfig(), rateLimitHandler());
     }
 }

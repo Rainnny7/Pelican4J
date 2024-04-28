@@ -23,11 +23,10 @@
  */
 package me.braydon.pelican.test;
 
+import lombok.SneakyThrows;
 import me.braydon.pelican.action.pelican.PelicanPanelActions;
 import me.braydon.pelican.client.ClientConfig;
 import me.braydon.pelican.client.Pelican4J;
-import me.braydon.pelican.exception.PanelAPIException;
-import me.braydon.pelican.model.Node;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -65,11 +64,12 @@ public final class PelicanActionTests {
          * Test getting a list of
          * nodes from the panel.
          */
-        @Test
+        @Test @SneakyThrows
         void testGetNodes() {
-            Node node = client.actions().application().nodes().details(-1).execute();
-            System.out.println("node = " + node);
-            // TODO: ...
+            client.actions().application().nodes().details(1).queue(node -> {
+                System.out.println("node = " + node);
+            });
+            Thread.sleep(60000L);
         }
     }
 }

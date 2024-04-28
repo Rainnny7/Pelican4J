@@ -29,6 +29,8 @@ import com.google.gson.JsonObject;
 import lombok.Builder;
 import lombok.NonNull;
 import lombok.SneakyThrows;
+import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import me.braydon.pelican.client.ClientConfig;
 import me.braydon.pelican.exception.PanelAPIException;
 import me.braydon.pelican.model.PanelModel;
@@ -39,7 +41,8 @@ import okhttp3.*;
  *
  * @author Braydon
  */
-@Builder
+@Builder @ToString
+@Slf4j(topic = "Web Request")
 public class JsonWebRequest {
     private static final OkHttpClient HTTP_CLIENT = new OkHttpClient();
     private static final MediaType JSON_MEDIA = MediaType.get("application/json");
@@ -71,10 +74,17 @@ public class JsonWebRequest {
      * @param <T> the response type
      */
     @SneakyThrows
-    protected <T extends PanelModel<T>> T execute(@NonNull ClientConfig clientConfig, Class<T> responseType) {
+    public <T extends PanelModel<T>> T execute(@NonNull ClientConfig clientConfig, Class<T> responseType) {
+        String endpoint = clientConfig.panelUrl() + "/api" + this.endpoint;
+        if (clientConfig.debugging()) {
+            log.debug("Sending a {} request to {}...", method, endpoint);
+            if (body != null) {
+                log.debug("With Body: {}", body);
+            }
+        }
         Request request = new Request.Builder()
                 .method(method.name(), body == null ? null : RequestBody.create(body, JSON_MEDIA))
-                .url(clientConfig.panelUrl() + "/api" + endpoint)
+                .url(endpoint)
                 .addHeader("Content-Type", "application/json")
                 .addHeader("Accept", "Application/vnd.pterodactyl.v1+json")
                 .addHeader("Authorization", "Bearer " + clientConfig.apiKey())
@@ -84,6 +94,10 @@ public class JsonWebRequest {
         try (Response response = HTTP_CLIENT.newCall(request).execute()) {
             int status = response.code(); // The HTTP response code
             String json = response.body().string(); // The json response
+
+            if (clientConfig.debugging()) {
+                log.debug("Receive response: {}", status);
+            }
 
             // If the status is not 200 (OK), handle the error
             if (status != 200) {

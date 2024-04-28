@@ -31,7 +31,7 @@ import lombok.extern.slf4j.Slf4j;
 import me.braydon.pelican.action.PanelActions;
 import me.braydon.pelican.action.pelican.PelicanPanelActions;
 import me.braydon.pelican.action.pterodactyl.PteroPanelActions;
-import me.braydon.pelican.request.WebRequestHandler;
+import me.braydon.pelican.request.RateLimitHandler;
 
 import java.io.Closeable;
 
@@ -57,7 +57,9 @@ public final class Pelican4J<A extends PanelActions> implements Closeable {
     @SneakyThrows
     private Pelican4J(@NonNull ClientConfig config, @NonNull Class<A> actionsClass) {
         this.config = config;
-        actions = actionsClass.getConstructor(WebRequestHandler.class).newInstance(new WebRequestHandler(config));
+        actions = actionsClass.getConstructor(ClientConfig.class, RateLimitHandler.class).newInstance(
+                config, new RateLimitHandler(config)
+        );
         if (config.debugging()) {
             log.debug("Created a new {} client: {}", actionsClass == PelicanPanelActions.class ? "Pelican" : "Ptero", config);
         }

@@ -23,33 +23,43 @@
  */
 package me.braydon.pelican.request;
 
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NonNull;
-import me.braydon.pelican.client.ClientConfig;
+import me.braydon.pelican.action.PanelAction;
 import me.braydon.pelican.model.PanelModel;
 
+import java.util.function.BiConsumer;
+
 /**
- * The handler for processing web requests.
+ * Represents a queued action.
  *
  * @author Braydon
  */
-@AllArgsConstructor
-public final class WebRequestHandler {
+@AllArgsConstructor(access = AccessLevel.PROTECTED) @Getter
+public class QueuedAction<T extends PanelModel<T>> {
     /**
-     * The client config used to make requests.
+     * The action that's queued.
      */
-    @NonNull private final ClientConfig clientConfig;
+    @NonNull private final PanelAction<?> action;
 
     /**
-     * Handle the given web request.
-     *
-     * @param request the request to handle
-     * @param responseType the expected response type, null if none
-     * @return the response, null if none
-     * @param <T> the response type
+     * The callback to invoke when
+     * this action is executed.
      */
-    public <T extends PanelModel<T>> T handle(@NonNull JsonWebRequest request, Class<T> responseType) {
-        // TODO: handle rate limit handling for async reqs
-        return request.execute(clientConfig, responseType);
+    @NonNull private final BiConsumer<T, Exception> callback;
+
+    /**
+     * The amount of times this
+     * action has been retried.
+     */
+    private int retries;
+
+    /**
+     * Increment the retry count.
+     */
+    protected void incrementRetries() {
+        retries++;
     }
 }

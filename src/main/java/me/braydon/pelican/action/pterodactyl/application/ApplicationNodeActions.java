@@ -26,9 +26,10 @@ package me.braydon.pelican.action.pterodactyl.application;
 import lombok.NonNull;
 import me.braydon.pelican.action.PanelAction;
 import me.braydon.pelican.action.PanelActions;
+import me.braydon.pelican.client.ClientConfig;
 import me.braydon.pelican.model.Node;
 import me.braydon.pelican.request.JsonWebRequest;
-import me.braydon.pelican.request.WebRequestHandler;
+import me.braydon.pelican.request.RateLimitHandler;
 
 /**
  * Application node actions
@@ -37,8 +38,8 @@ import me.braydon.pelican.request.WebRequestHandler;
  * @author Braydon
  */
 public final class ApplicationNodeActions extends PanelActions {
-    public ApplicationNodeActions(@NonNull WebRequestHandler requestHandler) {
-        super(requestHandler);
+    public ApplicationNodeActions(@NonNull ClientConfig clientConfig, @NonNull RateLimitHandler rateLimitHandler) {
+        super(clientConfig, rateLimitHandler);
     }
 
     /**
@@ -49,7 +50,7 @@ public final class ApplicationNodeActions extends PanelActions {
      * @return the action
      */
     public PanelAction<Node> details(int id) {
-        return PanelAction.create(requestHandler(), JsonWebRequest.builder()
+        return PanelAction.create(clientConfig(), rateLimitHandler(), JsonWebRequest.builder()
                 .endpoint("/application/nodes/" + id)
                 .build(), Node.class);
     }

@@ -25,7 +25,8 @@ package me.braydon.pelican.action.pelican;
 
 import lombok.NonNull;
 import me.braydon.pelican.action.pterodactyl.PteroPanelActions;
-import me.braydon.pelican.request.WebRequestHandler;
+import me.braydon.pelican.client.ClientConfig;
+import me.braydon.pelican.request.RateLimitHandler;
 
 /**
  * Implemented actions for the Pelican panel.
@@ -34,7 +35,7 @@ import me.braydon.pelican.request.WebRequestHandler;
  * @see <a href="https://pelican.dev">Pelican Website</a>
  */
 public class PelicanPanelActions extends PteroPanelActions {
-    public PelicanPanelActions(@NonNull WebRequestHandler requestHandler) {
-        super(requestHandler);
+    public PelicanPanelActions(@NonNull ClientConfig clientConfig, @NonNull RateLimitHandler rateLimitHandler) {
+        super(clientConfig, rateLimitHandler);
     }
 }
