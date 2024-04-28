@@ -28,7 +28,6 @@ import me.braydon.pelican.action.pelican.PelicanPanelActions;
 import me.braydon.pelican.action.pterodactyl.application.ApplicationNodeActions;
 import me.braydon.pelican.client.ClientConfig;
 import me.braydon.pelican.client.Pelican4J;
-import me.braydon.pelican.model.Node;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -73,10 +72,6 @@ public final class PelicanActionTests {
             nodeActions.getDetails(1).queue(node -> {
                 System.out.println("node = " + node);
             });
-
-            // Get the details for Node 1 in a blocking manner
-            Node node = nodeActions.getDetails(1).execute();
-            System.out.println("node = " + node);
 
             Thread.sleep(60000L);
         }
