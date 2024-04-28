@@ -43,3 +43,6 @@ jobs:
       # Publish to Maven
       - name: Test and Publish to Maven
         run: mvn deploy -Pgen-javadocs -B -Dstyle.color=always --update-snapshots -q -T4C
+        env:
+          TEST_PANEL_URL: ${{ secrets.TEST_PANEL_URL }}
+          TEST_APPS_API_KEY: ${{ secrets.TEST_APPS_API_KEY }}
