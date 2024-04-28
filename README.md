@@ -1,5 +1,7 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-limegreen.svg?style=plastic)](https://choosealicense.com/licenses/mit)
 [![Maven Publish Workflow](https://git.rainnny.club/Rainnny/Pelican4J/actions/workflows/maven-publish.yml/badge.svg)](./actions?workflow=maven-publish.yml)
+![Wakatime Hours](https://wakatime.rainnny.club/api/badge/Rainnny/interval:any/project:Pelican4J)
+[![Discord](https://discord.com/api/guilds/827863713855176755/widget.png)](https://discord.gg/p9gzFE2bc6)
 
 # Pelican4J
 A Java API wrapper for the [Pelican](https://pelican.dev) and [Pterodactyl](https://pterodactyl.io) panel API.
@@ -12,12 +14,19 @@ A Java API wrapper for the [Pelican](https://pelican.dev) and [Pterodactyl](http
 - [Installation](#installation)
   - [Maven](#maven)
   - [Gradle (Kotlin DSL)](#gradle-kotlin-dsl)
+- [Usage](#usage)
 
 ---
 
 ## Installation
 ### Maven
+`TODO`
+
 ### Gradle (Kotlin DSL)
+`TODO`
+
+## Usage
+`TODO`
 
 ---
 
