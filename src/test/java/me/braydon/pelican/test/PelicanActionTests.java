@@ -73,7 +73,7 @@ public final class PelicanActionTests {
                 System.out.println("node = " + node);
             });
 
-            Thread.sleep(60000L);
+            Thread.sleep(2000L);
         }
     }
 }
