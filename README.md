@@ -18,7 +18,9 @@ A Java API wrapper for the [Pelican](https://pelican.dev) and [Pterodactyl](http
   - [Maven](#maven)
   - [Gradle (Kotlin DSL)](#gradle-kotlin-dsl)
 - [Getting Started](#-getting-started)
-  - [Creating A Client](#creating-a-pelican-client)
+- [Panel Actions](#-panel-actions)
+  - [Rate Limiting](#-rate-limiting)
+  - [Error Handling](#-error-handling)
 
 ---
 
@@ -41,7 +43,7 @@ implementation("me.braydon:Pelican4J:VERSION")
 ```
 
 ## 🏃‍♂️ Getting Started
-Below is an example on how to create a client, and send an action to the panel.
+Below is an example on how to create a client for Pelican **(Ptero is also supported)**, and send an action to the panel.
 
 ```java
 Pelican4J<PelicanPanelActions> client = Pelican4J.forPelican(ClientConfig.builder()
