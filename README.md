@@ -3,7 +3,7 @@
 ![Wakatime Hours](https://wakatime.rainnny.club/api/badge/Rainnny/interval:any/project:Pelican4J)
 [![Discord](https://discord.com/api/guilds/827863713855176755/widget.png)](https://discord.gg/p9gzFE2bc6)
 
-# Pelican4J
+# 🦅 Pelican4J
 A Java API wrapper for the [Pelican](https://pelican.dev) and [Pterodactyl](https://pterodactyl.io) panel API.
 
 > [!IMPORTANT]
@@ -18,7 +18,7 @@ A Java API wrapper for the [Pelican](https://pelican.dev) and [Pterodactyl](http
 
 ---
 
-## 💾 Installation
+## 🔬 Installation
 ### Maven
 `TODO`
 
