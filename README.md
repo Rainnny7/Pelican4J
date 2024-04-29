@@ -11,21 +11,33 @@ A Java API wrapper for the [Pelican](https://pelican.dev) and [Pterodactyl](http
 
 ---
 
-- [Installation](#installation)
+# Table of Contents
+- [Installation](#-installation)
   - [Maven](#maven)
   - [Gradle (Kotlin DSL)](#gradle-kotlin-dsl)
-- [Usage](#usage)
+- [Getting Started](#-getting-started)
 
 ---
 
 ## 🔬 Installation
+Before getting started, you must add the dependency to your project.
+Below you can find the dependency for both [Maven](#maven) and [Gradle](#gradle-kotlin-dsl).
+
 ### Maven
-`TODO`
+```xml
+<dependency>
+  <groupId>me.braydon</groupId>
+  <artifactId>Pelican4J</artifactId>
+  <version>VERSION</version>
+</dependency>
+```
 
 ### Gradle (Kotlin DSL)
-`TODO`
+```kt
+implementation("me.braydon:Pelican4J:VERSION")
+```
 
-## Usage
+## 🏃‍♂️ Getting Started
 `TODO`
 
 ---
