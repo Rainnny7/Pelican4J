@@ -29,12 +29,14 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.ToString;
 
+import java.util.Date;
 import java.util.UUID;
 
 /**
  * A server node model.
  *
  * @author Braydon
+ * @see <a href="https://dashflo.net/docs/api/pterodactyl/v1/#req_9c01cbbf259f4b1f8aa6ff3b51dadd0e">Model Scheme</a>
  */
 @AllArgsConstructor @Getter @ToString
 public final class Node extends PanelModel<Node> {
@@ -64,7 +66,80 @@ public final class Node extends PanelModel<Node> {
     @SerializedName("location_id") private final int locationId;
 
     /**
+     * The FQDN scheme of this node.
+     */
+    @NonNull private final String scheme;
+
+    /**
+     * The FQDN of this node.
+     */
+    @NonNull private final String fqdn;
+
+    /**
+     * The maximum size of a file that can be uploaded to this node.
+     */
+    @SerializedName("upload_size") private final long maxUploadSize;
+
+    /**
+     * The memory allocated to this node.
+     */
+    private final long memory;
+
+    /**
+     * The memory overallocation of this node.
+     */
+    @SerializedName("memory_overallocate") private final long memoryOverallocation;
+
+    /**
+     * The disk allocated to this node.
+     */
+    private final long disk;
+
+    /**
+     * The disk overallocation of this node.
+     */
+    @SerializedName("disk_overallocate") private final long diskOverallocation;
+
+    /**
+     * The port this node listens on.
+     */
+    @SerializedName("daemon_listen") private final int port;
+
+    /**
+     * The SFTP port this node listens on.
+     */
+    @SerializedName("daemon_sftp") private final int sftpPort;
+
+    /**
+     * The volumes directory of this node.
+     * <p>
+     * This is where the server files are stored.
+     * </p>
+     */
+    @SerializedName("daemon_base") @NonNull private final String volumesDirectory;
+
+    /**
      * Whether this node is public.
      */
     @SerializedName("public") private final boolean publiclyVisible;
+
+    /**
+     * Whether this node is behind a proxy.
+     */
+    @SerializedName("behind_proxy") private final boolean behindProxy;
+
+    /**
+     * Whether this node is in maintenance mode.
+     */
+    @SerializedName("maintenance_mode") private final boolean maintenanceMode;
+
+    /**
+     * The date this node was last updated.
+     */
+    @SerializedName("updated_at") @NonNull private final Date lastUpdated;
+
+    /**
+     * The date this node was created.
+     */
+    @SerializedName("created_at") @NonNull private final Date created;
 }
