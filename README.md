@@ -18,7 +18,7 @@ A Java API wrapper for the [Pelican](https://pelican.dev) and [Pterodactyl](http
 
 ---
 
-## Installation
+## 💾 Installation
 ### Maven
 `TODO`
 
